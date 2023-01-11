@@ -60,7 +60,7 @@ def trainer():
 def dataset(id = 999):
     import cv2
     import os
-    cam = cv2.VideoCapture(1)
+    cam = cv2.VideoCapture(0)
     cam.set(3, 640) 
     cam.set(4, 480) 
     # haarcascade file  on static
@@ -115,7 +115,7 @@ def recognition():
 
     name_id = {14321:'Ayushi',36112:'Sudhanshu',95812:'Ashish'}  #key in names, start from the second place, leave first empty
     print("################################################################")
-    cam = cv2.VideoCapture(1)
+    cam = cv2.VideoCapture(0)
     print("#####$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$####")
     
     cam.set(3, 640) 
@@ -338,6 +338,7 @@ def addVisitor():
     
  
     #li = pre_id
+        
     id = str(pre_id[-1])
     id = id.split(",")
     id = id[0].split("(")
@@ -378,7 +379,7 @@ def help():
 
 
 
-app.run(host="127.0.0.9", port=8086, debug=True)
+app.run(debug=True)
 
 
 
