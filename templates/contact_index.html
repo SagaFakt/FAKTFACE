@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Attendance Dashboard | By Code Info</title>
+  <link rel="stylesheet" href="{{url_for('static',filename='Contact/contact_style.css')}}" />
+  <!-- Font Awesome Cdn Link -->
+  <script src="https://kit.fontawesome.com/56f860a8d3.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="container">
+    <nav>
+      <ul>
+        <li>
+          <a href="/tracksheet" id="logo" class="logo">
+            <img src="{{url_for('static',filename='/images/FAKT.svg')}}" />
+            <span class="nav-item">FAKT</span>
+          </a>
+        </li>
+        <li>
+          <a href="/tracksheet" class="active">
+            <i class="fas fa-solid fa-list-ol"></i>
+            <span class="nav-item">Tracksheet</span>
+          </a>
+        </li>
+        <li>
+          <a href="/addVisitor">
+            <i class="fas fa-database"></i>
+            <span class="nav-item">Records</span>
+          </a>
+        </li>
+        <li>
+          <a href="contact">
+            <i class="fas fa-comment"></i>
+            <span class="nav-item">contact Us</span>
+          </a>
+        </li>
+        <li>
+          <a href="/help">
+            <i class="fas fa-solid fa-circle-info"></i>
+            <span class="nav-item">Help & Support</span>
+          </a>
+        </li>
+        <li>
+          <a href="/login" class="logout">
+            <i class="fas fa-sign-out-alt"></i>
+            <span class="nav-item">Sign out</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+
+    <section id="contact_us" class="contact_us">
+      <div class="new_visitor_record">
+        <h1>Contact Us</h1>
+        <form action="/register">
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Name" required/>
+          </div>
+          <div class="input-field">
+            <i class="fas fa-envelope"></i>
+            <input type="email" placeholder="Email" required/>
+          </div>
+          <div class="input-field">
+            <i class="fas fa-solid fa-phone"></i>
+            <input type="tel" placeholder="Contact" pattern="[6-9]{1}[0-9]{2}[0-9]{3}[0-9]{4}" required/>
+          </div>
+          <div class="input-field">
+            <i class="fas fa-solid fa-triangle-exclamation"></i>
+            <input type="text" placeholder="Issue Related to" required/>
+          </div>
+          <div class="input-field-message">
+            <i class="fas fa-solid fa-envelope"></i>
+            <textarea name="issue_message" id="issue_message" cols="30" rows="6" placeholder="Message"
+              required></textarea>
+          </div>
+          <input type="submit" class="btn" value="Submit">
+        </form>
+      </div>
+    </section>
+
+  </div>
+</body>
+
+</html>

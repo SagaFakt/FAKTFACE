@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{url_for('static',filename='Register/register_style.css')}}">
+    <script
+      src="https://kit.fontawesome.com/56f860a8d3.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Registered Successfully</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="top">
+        <i class="fa-solid fa-circle-check registered-icon"></i>
+        <h3>SUCCESS</h3>
+      </div>
+      <div class="bottom">
+        <p>Congratulations, your account has been successfully created.</p>
+        <!-- <button >Continue</button> -->
+        <a href="/login" target="_self">
+          <button type="submit" value="registered_successfully" class="btn solid">Continue</button>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>

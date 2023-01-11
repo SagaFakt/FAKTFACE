@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Visitors' Tracksheet</title>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='Tracksheet/tracksheet_style.css')}}"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/56f860a8d3.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <nav>
+        <ul>
+          <li>
+            <a href="/tracksheet" id="logo" class="logo">
+              <img src="{{url_for('static',filename='/images/FAKT.svg')}}" />
+              <span class="nav-item">FAKT</span>
+            </a>
+          </li>
+          <li>
+            <a href="#tracksheet" class="active">
+              <i class="fas fa-solid fa-list-ol"></i>
+              <span class="nav-item">Tracksheet</span>
+            </a>
+          </li>
+          <li>
+            <a href="/addVisitor">
+              <i class="fas fa-database"></i>
+              <span class="nav-item">Records</span>
+            </a>
+          </li>
+          <li>
+            <a href="/contact">
+              <i class="fas fa-comment"></i>
+              <span class="nav-item">contact Us</span>
+            </a>
+          </li>
+          <li>
+            <a href="/help">
+              <i class="fas fa-solid fa-circle-info"></i>
+              <span class="nav-item">Help & Support</span>
+            </a>
+          </li>
+          <li>
+            <a href="/login" class="logout">
+              <i class="fas fa-sign-out-alt"></i>
+              <span class="nav-item">Sign out</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <section id="tracksheet" class="tracksheet">
+        <div class="visitors_tracksheet">
+          <header class="tracksheet_header">
+            <h1>Visitors' Tracksheet</h1>
+            <button class="start_btn" onclick="live()">Live</button>
+          </header>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>S.No.</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Visit Time</th>
+                <th>About</th>
+                <th>Image</th>
+              </tr>
+            </thead>
+            {%for item in data%}
+            <tbody>
+              <tr>
+                <td>{{item[0]}}</td>
+                <td>{{item[1]}}</td>
+                <td>{{item[2]}}</td>
+                <td>{{item[3]}}</td>
+                <td>{{item[4]}}</td>
+                <td><button>View</button></td>
+              </tr>
+            </tbody>
+            {%endfor %}
+          </table>
+
+          <form action="/" method=='get'>
+            <input
+              type="button"
+              value="Download"
+              name="download_btn"
+              class="btn"
+            />
+          </form>
+        </div>
+      </section>
+    </div>
+
+    <script src="{{url_for('static',filename='Tracksheet/tracksheet_app.js')}}"></script>
+  </body>
+</html>

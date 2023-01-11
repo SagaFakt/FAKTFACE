@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/56f860a8d3.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="{{url_for('static',filename='VisitorRecord/visitor_style.css')}}" />
+  <!-- LINK FOR PYTHON CODE -->
+  <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+  <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+  <title>Add New Record</title>
+</head>
+
+<body>
+  <div class="container">
+    <nav>
+      <ul>
+        <li>
+          <a href="/tracksheet" id="logo" class="logo">
+            <img src="{{url_for('static',filename='images/FAKT.svg')}}" />
+            <span class="nav-item">FAKT</span>
+          </a>
+        </li>
+        <li>
+          <a href="/tracksheet" class="active">
+            <i class="fas fa-solid fa-list-ol"></i>
+            <span class="nav-item">Tracksheet</span>
+          </a>
+        </li>
+        <li>
+          <a href="#add_new_record">
+            <i class="fas fa-database"></i>
+            <span class="nav-item">Records</span>
+          </a>
+        </li>
+        <li>
+          <a href="/contact">
+            <i class="fas fa-comment"></i>
+            <span class="nav-item">contact Us</span>
+          </a>
+        </li>
+        <li>
+          <a href="/help">
+            <i class="fas fa-solid fa-circle-info"></i>
+            <span class="nav-item">Help & Support</span>
+          </a>
+        </li>
+        <li>
+          <a href="/login" class="logout">
+            <i class="fas fa-sign-out-alt"></i>
+            <span class="nav-item">Sign out</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+
+    <section id="add_new_record" class="add_new_record">
+      <div class="new_visitor_record">
+
+        <h1>Add New Record</h1>
+        <form action="/addVisitor" method="post">
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Visitor's Name" name="vname" required/>
+          </div>
+          <div class="input-field">
+            <i class="fas fa-envelope"></i>
+            <input type="email" placeholder="Email" name="vemail" required />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-solid fa-phone"></i>
+            <input type="tel" placeholder="Contact" pattern="[6-9]{1}[0-9]{2}[0-9]{3}[0-9]{4}" name="vcontact" required/>
+          </div>
+          <div class="input-field">
+            <i class="fas fa-solid fa-circle-info"></i>
+            <input type="text" placeholder="About Visitor" name="vabout" required/>
+          </div>
+          <div class="input-field">
+            <div class="camera">
+              <i class="fas fa-solid fa-image"></i>
+              <h3>Capture Images</h3>
+            </div>
+
+            <button onclick="vcapture()" class="camera_btn" name="vcapture">
+              <!--<py-script>
+                def open_py_file():
+                call(["python","nahichalraha.py"])
+                open_py_file()
+              </py-script>-->
+              <i class="fas fa-solid fa-camera"></i>
+            </button>
+          </div>
+          <input type="submit"  class="btn" value="Submit" name="addvisitor_btn">
+        </form>
+      </div>
+    </section>
+  </div>
+  <script src="{{url_for('static',filename='VisitorRecprd/visitor_record.js')}}"></script>
+
+</body>
+
+</html>

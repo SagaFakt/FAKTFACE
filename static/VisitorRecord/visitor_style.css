@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600;700&family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: rgb(226, 226, 226);
+}
+
+
+/* Navbar */
+
+nav {
+  position: sticky;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  left: 0;
+  width: 100px;
+  margin-right: 4px;
+  background: #5995fd;
+  overflow: hidden;
+  transition: 1s;
+}
+
+nav:hover {
+  width: 330px;
+  transition: 1s;
+}
+
+.logo {
+  text-align: center;
+  display: flex;
+  padding-bottom: 3rem;
+  margin: 0;
+  padding: 10px 10px 10px 0px;
+  margin-bottom: 5rem;
+}
+
+.logo img {
+  width: 100px;
+  height: 100px;
+  padding-top: 15px;
+}
+
+.logo span {
+  color: white;
+  font-family: 'Domine', serif;
+  font-size: 50px;
+  text-transform: uppercase;
+  padding-left: 0;
+  padding-top: 19px;
+}
+
+.logo:hover {
+  background: #5995fd;
+  color: #fff;
+}
+
+.logo:hover span,
+.logo:hover img {
+  color: #fff;
+  font-weight: normal;
+}
+
+a {
+  position: relative;
+  width: 280px;
+  font-size: 20px;
+  color: #fff;
+  border-radius: 50px 0 0 50px;
+  display: table;
+  padding: 8px 18px 18px;
+  margin-bottom: 10px;
+}
+
+nav .fas {
+  position: relative;
+  width: 70px;
+  height: 40px;
+  top: 13px;
+  text-align: center;
+}
+
+.nav-item {
+  position: relative;
+  top: 12px;
+  margin-left: 5px;
+}
+
+a:hover {
+  background: #fff;
+  color: #5995fd;
+}
+
+a:hover i {
+  color: #5995fd;
+  transition: 0.5s;
+  font-weight: bold;
+}
+
+a:hover span {
+  color: #5995fd;
+  transition: 0.5s;
+  font-weight: bold;
+}
+
+.logout {
+  position: fixed;
+  bottom: 0;
+}
+.logout:hover i {
+  color: red;
+  transition: 0.5s;
+}
+.logout:hover span {
+  color: red;
+  transition: 0.5s;
+}
+.container {
+  display: flex;
+}
+
+
+
+/* Add New Record */
+
+.add_new_record {
+  width: 100%;
+  text-transform: capitalize;
+}
+
+.new_visitor_record {
+  width: 100%;
+  height: 99vh;
+  padding: 10px;
+  margin-top: 2px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.new_visitor_record h1 {
+  font-size: 3.5rem;
+  text-align: center;
+  padding: 25px 0 10px;
+  color: #5995fd;
+}
+
+form {
+  border-collapse: collapse;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0rem 5rem;
+  transition: all 0.2s 0.7s;
+  overflow: hidden;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.input-field, .camera {
+  max-width: 600px;
+  width: 100%;
+  background-color: #f0f0f0;
+  margin: 0.5rem 0;
+  height: 60px;
+  border-radius: 55px;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  padding: 0 0.4rem;
+  position: relative;
+}
+
+.input-field i{
+  text-align: center;
+  line-height: 60px;
+  color: #acacac;
+  transition: 0.5s;
+  font-size: 1.1rem;
+}
+
+.input-field input, .camera h3 {
+  background: none;
+  outline: none;
+  border: none;
+  line-height: 1;
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.input-field input::placeholder {
+  color: #aaa;
+  font-weight: 500;
+}
+
+.camera{
+  width: 300px;
+  padding-bottom: 30px;
+  height: 40px;
+}
+
+.camera h3{
+  padding: 13px 0px 0px 22px;
+  color: #aaa;
+}
+
+.camera i{
+  line-height: 50px;
+  padding-left: 17px;
+}
+
+.camera_btn{
+  padding-left: 380px;
+  height: 60px;
+  border-radius: 55px;
+}
+
+.camera_btn i{
+font-size: 2.3rem;
+color: red;
+cursor: pointer;
+}
+
+.v_images {
+  padding-top: 15px;
+}
+
+.btn {
+  width: 300px;
+  background-color: #5995fd;
+  border: none;
+  outline: none;
+  height: 49px;
+  border-radius: 49px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: 0.5s;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #4d84e2;
+}
+
+/* @media (max-width: 870px) {
+  .new_visitor_record {
+    min-height: 800px;
+    height: 99vh;
+    width: 100%;
+  }
+}
+@media (max-width: 570px) {
+  form {
+    padding: 0 1.5rem;
+  }
+
+  .new_visitor_record {
+    padding: 1.5rem;
+  }
+} */
